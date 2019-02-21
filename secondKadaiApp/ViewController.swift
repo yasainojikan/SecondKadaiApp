@@ -15,6 +15,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBOutlet weak var name: UITextField!
+    var nameString = ""
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nameViewController:NameViewController = segue.destination as! NameViewController
+        nameViewController.nameString = name.text!  //textfield.text で、入力された文字列を変数に格納する
+    }
+    
+    
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {
+    }
 }
 
